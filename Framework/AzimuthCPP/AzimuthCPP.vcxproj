@@ -24,6 +24,7 @@
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp" />
     <ClCompile Include="src\GameStates\GameStateManager.cpp" />
     <ClCompile Include="src\GameStates\IGameState.cpp" />
+    <ClCompile Include="src\Utils\Config.cpp" />
     <ClCompile Include="src\Utils\Utilities.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
@@ -35,6 +36,7 @@
     <ClInclude Include="src\GameObjects\GameObjectManager.h" />
     <ClInclude Include="src\GameStates\GameStateManager.h" />
     <ClInclude Include="src\GameStates\IGameState.h" />
+    <ClInclude Include="src\Utils\Config.h" />
     <ClInclude Include="src\Utils\LINQ.h" />
     <ClInclude Include="src\Utils\Utilities.h" />
     <ClInclude Include="src\Window.h" />
