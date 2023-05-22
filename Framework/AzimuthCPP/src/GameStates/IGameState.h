@@ -4,6 +4,7 @@
 
 class GameStateManager;
 class GameObjectManager;
+class GameObject;
 
 class IGameState
 {
@@ -22,6 +23,7 @@ public:
 protected:
     GameStateManager* m_stateManager;
     GameObjectManager* m_objectManager;
+    GameObject* m_world;
 
 
 };
