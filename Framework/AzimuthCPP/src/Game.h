@@ -1,5 +1,8 @@
 #pragma once
 
+class GameStateManager;
+class GameObjectManager;
+
 class Game
 {
 public:
@@ -9,7 +12,7 @@ protected:
 	friend class Application;
 
 protected:
-	virtual void Load() = 0;
+	virtual void Load(GameStateManager* _gsMan, GameObjectManager* _goMan) = 0;
 	virtual void Unload() {}
 	
 	virtual void Draw() {}

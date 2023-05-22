@@ -3,6 +3,8 @@
 #include <raylib/raylib.h>
 
 #include "Window.h"
+#include "GameStates/GameStateManager.h"
+#include "GameObjects/GameObjectManager.h"
 
 Application* Application::m_instance = nullptr;
 
@@ -28,7 +30,8 @@ void Application::Quit()
 }
 
 Application::Application(Game* _game)
-	: m_game(_game), m_applicationDir(nullptr), m_window(nullptr), m_shouldQuit(false)
+	: m_game(_game), m_applicationDir(nullptr), m_window(nullptr), m_shouldQuit(false),
+	m_stateManager(nullptr), m_gameObjectManager(nullptr)
 {
 }
 
@@ -39,20 +42,40 @@ Application::~Application()
 		delete m_game;
 		m_game = nullptr;
 	}
+
+	if (m_window != nullptr)
+	{
+		delete m_window;
+		m_window = nullptr;
+	}
+
+	if (m_stateManager != nullptr)
+	{
+		delete m_stateManager;
+		m_stateManager = nullptr;
+	}
+
+	if (m_gameObjectManager != nullptr)
+	{
+		delete m_gameObjectManager;
+		m_gameObjectManager = nullptr;
+	}
 }
 
 void Application::Init()
 {
 	m_window = new Window();
+
+	m_stateManager = new GameStateManager();
+	m_gameObjectManager = new GameObjectManager();
+
+	m_window->Open();
+	m_game->Load(m_stateManager, m_gameObjectManager);
 }
 
 void Application::Process()
 {
 	Init();
-
-	m_window->Open();
-
-	m_game->Load();
 
 	while (!m_shouldQuit)
 	{
@@ -60,9 +83,15 @@ void Application::Process()
 
 		m_game->Update(dt);
 
+		m_stateManager->Update(dt);
+		m_gameObjectManager->Update(dt);
+
 		m_window->BeginFrame();
 
 		m_game->Draw();
+
+		m_stateManager->Draw();
+		m_gameObjectManager->Draw();
 
 		m_window->EndFrame();
 
@@ -70,7 +99,11 @@ void Application::Process()
 			m_shouldQuit = true;
 	}
 
-	m_game->Unload();
+	Terminate();
+}
 
+void Application::Terminate()
+{
+	m_game->Unload();
 	m_window->Close();
 }

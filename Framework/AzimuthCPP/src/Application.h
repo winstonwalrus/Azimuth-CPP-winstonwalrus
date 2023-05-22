@@ -8,6 +8,8 @@
 using std::string;
 
 class Window;
+class GameStateManager;
+class GameObjectManager;
 
 class Application
 {
@@ -31,12 +33,16 @@ private:
 
 	bool m_shouldQuit;
 
+	GameStateManager* m_stateManager;
+	GameObjectManager* m_gameObjectManager;
+
 private:
 	DLL Application(Game* _game);
 	DLL ~Application();
 
 	DLL void Init();
 	DLL void Process();
+	DLL void Terminate();
 
 };
 
