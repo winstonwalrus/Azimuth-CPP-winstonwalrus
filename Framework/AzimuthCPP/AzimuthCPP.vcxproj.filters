@@ -72,6 +72,9 @@
     <ClInclude Include="src\Utils\Config.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameObjects\ATransform.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameStates\GameStateManager.cpp">
@@ -97,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="src\Utils\Config.cpp">
       <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObjects\ATransform.cpp">
+      <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

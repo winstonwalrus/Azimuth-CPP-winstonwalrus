@@ -1,7 +1,9 @@
 #include "GameObject.h"
 
+#include "ATransform.h"
+
 GameObject::GameObject(const char* _name, GameStateManager* _gsMan, GameObjectManager* _goMan)
-	: m_stateManager(_gsMan), m_objectManager(_goMan), m_name(_name), m_tag("Default")
+	: m_stateManager(_gsMan), m_objectManager(_goMan), m_name(_name), m_tag("Default"), m_transform(nullptr)
 {
 }
 
@@ -43,4 +45,9 @@ const char* GameObject::GetName() const
 const char* GameObject::GetTag() const
 {
 	return m_tag;
+}
+
+ATransform* GameObject::Transform() const
+{
+	return m_transform;
 }

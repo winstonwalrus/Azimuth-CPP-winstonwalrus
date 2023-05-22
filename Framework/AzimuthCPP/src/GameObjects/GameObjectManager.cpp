@@ -1,6 +1,7 @@
 #include "GameObjectManager.h"
 
 #include "GameObject.h"
+#include "ATransform.h"
 
 void GameObjectManager::Spawn(GameObject* _go)
 {
@@ -42,7 +43,13 @@ void GameObjectManager::Update(float _dt)
 	m_listUpdates.clear();
 
 	for (auto iter = m_gameObjects.begin(); iter != m_gameObjects.end(); iter++)
-		(*iter)->Update(_dt);
+	{
+		GameObject* go = *iter;
+		if (go->Transform()->Parent() == nullptr)
+			go->Transform()->Update();
+
+		go->Update(_dt);
+	}
 }
 
 void GameObjectManager::Draw()

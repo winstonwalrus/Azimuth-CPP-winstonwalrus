@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\GameObjects\ATransform.cpp" />
     <ClCompile Include="src\GameObjects\GameObject.cpp" />
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp" />
     <ClCompile Include="src\GameStates\GameStateManager.cpp" />
@@ -32,6 +33,7 @@
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Azimuth.h" />
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\GameObjects\ATransform.h" />
     <ClInclude Include="src\GameObjects\GameObject.h" />
     <ClInclude Include="src\GameObjects\GameObjectManager.h" />
     <ClInclude Include="src\GameStates\GameStateManager.h" />

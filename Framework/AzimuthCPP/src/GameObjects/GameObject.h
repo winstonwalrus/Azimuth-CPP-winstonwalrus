@@ -4,6 +4,7 @@
 
 class GameStateManager;
 class GameObjectManager;
+class ATransform;
 
 class GameObject
 {
@@ -22,11 +23,15 @@ public:
 	DLL const char* GetName() const;
 	DLL const char* GetTag() const;
 
+	DLL ATransform* Transform() const;
+
 protected:
 	GameStateManager* m_stateManager;
 	GameObjectManager* m_objectManager;
 
 private:
+	ATransform* m_transform;
+
 	const char* m_name;
 	const char* m_tag;
 
