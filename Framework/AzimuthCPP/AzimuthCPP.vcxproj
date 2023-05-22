@@ -98,22 +98,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>Azimuth</TargetName>
-    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Dependencies\lib\Azimuth\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>Azimuth</TargetName>
-    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Dependencies\lib\Azimuth\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>Azimuth</TargetName>
-    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Dependencies\lib\Azimuth\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>Azimuth</TargetName>
-    <OutDir>$(SolutionDir)Builds\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Dependencies\lib\Azimuth\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -131,7 +131,8 @@
       <AdditionalDependencies>raylibdll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(OutDir)raylib.dll"</Command>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(SolutionDir)Builds\$(Configuration)\raylib.dll"
+copy /Y "$(OutDir)Azimuth.dll" "$(SolutionDir)Builds\$(Configuration)\Azimuth.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -154,7 +155,8 @@
       <AdditionalDependencies>raylibdll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(OutDir)raylib.dll"</Command>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(SolutionDir)Builds\$(Configuration)\raylib.dll"
+copy /Y "$(OutDir)Azimuth.dll" "$(SolutionDir)Builds\$(Configuration)\Azimuth.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -173,7 +175,8 @@
       <AdditionalDependencies>raylibdll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(OutDir)raylib.dll"</Command>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(SolutionDir)Builds\$(Configuration)\raylib.dll"
+copy /Y "$(OutDir)Azimuth.dll" "$(SolutionDir)Builds\$(Configuration)\Azimuth.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -196,7 +199,8 @@
       <AdditionalDependencies>raylibdll.lib;winmm.lib;kernel32.lib;opengl32.lib;gdi32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(OutDir)raylib.dll"</Command>
+      <Command>copy /Y "$(SolutionDir)Dependencies\lib\raylib\raylib.dll" "$(SolutionDir)Builds\$(Configuration)\raylib.dll"
+copy /Y "$(OutDir)Azimuth.dll" "$(SolutionDir)Builds\$(Configuration)\Azimuth.dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -17,5 +17,12 @@ IGameState::IGameState(const char* _id, GameStateManager* _gsMan, GameObjectMana
 
 IGameState::~IGameState()
 {
+    if (m_world != nullptr)
+    {
+        m_objectManager->Destroy(m_world);
+        m_world = nullptr;
+    }
+
     m_stateManager = nullptr;
+    m_objectManager = nullptr;
 }
