@@ -2,20 +2,22 @@
 
 #include "LINQ.h"
 #include "Utilities.h"
+#include "Application.h"
 
 #include <fstream>
 #include <vector>
+#include <string>
 
 using std::fstream;
 using std::ios;
 using std::getline;
 using std::vector;
+using std::string;
 
-Config* Config::m_instance = nullptr;
-
-Config::Config(string _directory)
-	: m_path(std::move(_directory) + "\\assets\\config.cfg")
+Config::Config(string _configName)
+	: m_path((string(Application::GetApplicationDirectory()) + "\\assets\\config\\" + _configName + ".cfg").c_str())
 {
+	Load();
 }
 
 Config::~Config()

@@ -3,6 +3,8 @@
 #include <raylib/raylib.h>
 
 #include "Window.h"
+#include "Utils/Config.h"
+
 #include "GameStates/GameStateManager.h"
 #include "GameObjects/GameObjectManager.h"
 
@@ -69,7 +71,10 @@ void Application::Init()
 	m_stateManager = new GameStateManager();
 	m_gameObjectManager = new GameObjectManager();
 
-	m_window->Open();
+	m_debugConfig = new Config("debug");
+	m_appConfig = new Config("app");
+
+	m_window->Open(*m_appConfig->Get<int>("Application", "quitKey"));
 	m_game->Load(m_stateManager, m_gameObjectManager);
 }
 

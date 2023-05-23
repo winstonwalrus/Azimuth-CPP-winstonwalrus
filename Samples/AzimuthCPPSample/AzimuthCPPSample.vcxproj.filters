@@ -13,10 +13,32 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\Config">
+      <UniqueIdentifier>{165fd8db-ffbd-4219-bfcb-2c1579ee2609}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SampleGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SampleGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="assets\config\window.cfg">
+      <Filter>Resource Files\Config</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="assets\config\app.cfg">
+      <Filter>Resource Files\Config</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="assets\config\debug.cfg">
+      <Filter>Resource Files\Config</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
