@@ -1,8 +1,8 @@
-#include "Config.h"
+#include "Azimuth/Utils/Config.h"
 
-#include "LINQ.h"
-#include "Utilities.h"
-#include "Application.h"
+#include "Azimuth/Utils/LINQ.h"
+#include "Azimuth/Utils/Utilities.h"
+#include "Azimuth/Application.h"
 
 #include <fstream>
 #include <vector>

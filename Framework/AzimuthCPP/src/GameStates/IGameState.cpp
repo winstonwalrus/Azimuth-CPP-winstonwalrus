@@ -1,8 +1,8 @@
-#include "IGameState.h"
+#include "Azimuth/GameStates/IGameState.h"
 
-#include "GameObjects/GameObjectManager.h"
-#include "GameObjects/GameObject.h"
-#include "GameObjects/ATransform.h"
+#include "Azimuth/GameObjects/GameObjectManager.h"
+#include "Azimuth/GameObjects/GameObject.h"
+#include "Azimuth/GameObjects/ATransform.h"
 
 #include <string>
 

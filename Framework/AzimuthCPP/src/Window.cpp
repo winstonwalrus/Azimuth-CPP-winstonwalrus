@@ -1,6 +1,6 @@
-#include "Window.h"
+#include "Azimuth/Window.h"
 
-#include "Utils/Config.h"
+#include "Azimuth/Utils/Config.h"
 
 Window::Window()
 	: m_config(new Config("window")), m_width(0), m_height(0), m_clearColor(), m_title(nullptr)

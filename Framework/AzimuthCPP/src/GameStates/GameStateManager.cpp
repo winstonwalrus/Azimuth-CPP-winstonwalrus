@@ -1,5 +1,5 @@
-#include "GameStateManager.h"
-#include "IGameState.h"
+#include "Azimuth/GameStates/GameStateManager.h"
+#include "Azimuth/GameStates/IGameState.h"
 
 GameStateManager::GameStateManager()
 {

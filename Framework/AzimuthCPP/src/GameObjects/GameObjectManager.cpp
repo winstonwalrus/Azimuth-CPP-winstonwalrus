@@ -1,7 +1,7 @@
-#include "GameObjectManager.h"
+#include "Azimuth/GameObjects/GameObjectManager.h"
 
-#include "GameObject.h"
-#include "ATransform.h"
+#include "Azimuth/GameObjects/GameObject.h"
+#include "Azimuth/GameObjects/ATransform.h"
 
 void GameObjectManager::Spawn(GameObject* _go)
 {
@@ -20,6 +20,22 @@ void GameObjectManager::Destroy(GameObject* _go)
 			m_gameObjects.remove(_go);
 			delete _go;
 		});
+}
+
+list<GameObject*> GameObjectManager::FindObjectsWithTag(const char* _tag)
+{
+	list<GameObject*> objects;
+
+	for (auto iter = m_gameObjects.begin(); iter != m_gameObjects.end(); iter++)
+	{
+		GameObject* go = *iter;
+		if (strcmp(go->GetTag(), _tag) == 0)
+		{
+			objects.push_back(go);
+		}
+	}
+
+	return objects;
 }
 
 GameObjectManager::GameObjectManager()

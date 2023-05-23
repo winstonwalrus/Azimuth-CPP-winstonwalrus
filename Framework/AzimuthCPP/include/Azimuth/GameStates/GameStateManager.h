@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Azimuth.h"
+#include "Azimuth/Azimuth.h"
 
 #include <vector>
 #include <map>

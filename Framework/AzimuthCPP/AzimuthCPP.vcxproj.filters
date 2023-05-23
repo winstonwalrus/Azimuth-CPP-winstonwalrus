@@ -39,44 +39,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\GameStates\GameStateManager.h">
-      <Filter>Header Files\Game States</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameStates\IGameState.h">
-      <Filter>Header Files\Game States</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Application.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Azimuth.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Game.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Window.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\LINQ.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Utilities.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameObjects\GameObjectManager.h">
-      <Filter>Header Files\Game Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameObjects\GameObject.h">
-      <Filter>Header Files\Game Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utils\Config.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameObjects\ATransform.h">
-      <Filter>Header Files\Game Objects</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="src\GameStates\GameStateManager.cpp">
       <Filter>Source Files\Game States</Filter>
     </ClCompile>
@@ -104,5 +66,43 @@
     <ClCompile Include="src\GameObjects\ATransform.cpp">
       <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Azimuth\Application.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Azimuth.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Game.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Window.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\GameObjects\ATransform.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\GameObjects\GameObject.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\GameObjects\GameObjectManager.h">
+      <Filter>Header Files\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h">
+      <Filter>Header Files\Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\GameStates\IGameState.h">
+      <Filter>Header Files\Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Utils\Config.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Utils\LINQ.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Utils\Utilities.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

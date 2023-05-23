@@ -1,9 +1,9 @@
-#include "GameObject.h"
+#include "Azimuth/GameObjects/GameObject.h"
 
-#include "ATransform.h"
+#include "Azimuth/GameObjects/ATransform.h"
 
 GameObject::GameObject(const char* _name, GameStateManager* _gsMan, GameObjectManager* _goMan)
-	: m_stateManager(_gsMan), m_objectManager(_goMan), m_name(_name), m_tag("Default"), m_transform(nullptr)
+	: m_stateManager(_gsMan), m_objectManager(_goMan), m_name(_name), m_tag("Default"), m_transform(new ATransform())
 {
 }
 

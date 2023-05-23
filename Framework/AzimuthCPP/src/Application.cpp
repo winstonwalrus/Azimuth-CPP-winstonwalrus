@@ -1,12 +1,12 @@
-#include "Application.h"
+#include "Azimuth/Application.h"
 
 #include <raylib/raylib.h>
 
-#include "Window.h"
-#include "Utils/Config.h"
+#include "Azimuth/Window.h"
+#include "Azimuth/Utils/Config.h"
 
-#include "GameStates/GameStateManager.h"
-#include "GameObjects/GameObjectManager.h"
+#include "Azimuth/GameStates/GameStateManager.h"
+#include "Azimuth/GameObjects/GameObjectManager.h"
 
 Application* Application::m_instance = nullptr;
 

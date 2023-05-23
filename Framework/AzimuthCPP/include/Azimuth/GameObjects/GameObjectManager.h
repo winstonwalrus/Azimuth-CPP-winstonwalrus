@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Azimuth.h"
+#include "Azimuth/Azimuth.h"
 
 #include <vector>
 #include <list>
@@ -18,6 +18,7 @@ class GameObjectManager
 public:
 	DLL void Spawn(GameObject* _go);
 	DLL void Destroy(GameObject* _go);
+	DLL list<GameObject*> FindObjectsWithTag(const char* _tag);
 
 private:
 	friend class Application;

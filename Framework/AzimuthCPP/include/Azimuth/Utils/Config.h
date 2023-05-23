@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Azimuth/Azimuth.h"
+
 #include <map>
 #include <iostream>
 #include <string>
@@ -14,8 +16,8 @@ using glm::vec2;
 class Config
 {
 public:
-	Config(string _configName);
-	~Config();
+	DLL Config(string _configName);
+	DLL ~Config();
 
 	template<typename VALUE>
 	VALUE* Get(string _category, string _key);
@@ -33,12 +35,12 @@ private:
 	map<string, map<string, string>> m_textValues;
 
 private:
-	void Load();
-	string ProcessLine(string _line, string _category);
-	void ProcessValue(string _line, string _category);
-	void ProcessDecimal(string _varName, string _val, string _category);
-	bool IsDecimal(string _val);
-	string ProcessCategory(string _line, string _category);
+	DLL void Load();
+	DLL string ProcessLine(string _line, string _category);
+	DLL void ProcessValue(string _line, string _category);
+	DLL void ProcessDecimal(string _varName, string _val, string _category);
+	DLL bool IsDecimal(string _val);
+	DLL string ProcessCategory(string _line, string _category);
 
 	template<typename VALUE>
 	void InsertValue(string _varName, VALUE _value, string _category, map<string, map<string, VALUE>>& _values);
