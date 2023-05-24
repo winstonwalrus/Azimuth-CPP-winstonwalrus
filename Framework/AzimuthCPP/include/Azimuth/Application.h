@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Azimuth.h"
-#include "Game.h"
+#include "Azimuth/Azimuth.h"
+#include "Azimuth/Game.h"
 
 #include <string>
 

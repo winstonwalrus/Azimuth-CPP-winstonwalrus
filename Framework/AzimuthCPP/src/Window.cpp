@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "Azimuth/Window.h"
 
 Window::Window()
 	: m_width(800), m_height(600), m_title("Test"), m_clearColor({ 255, 255, 255, 255 })

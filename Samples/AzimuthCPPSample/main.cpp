@@ -1,5 +1,5 @@
-#include <Application.h>
-#include <Game.h>
+#include <Azimuth/Application.h>
+#include <Azimuth/Game.h>
 
 class SampleGame : public Game
 {

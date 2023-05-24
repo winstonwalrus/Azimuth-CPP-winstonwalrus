@@ -1,8 +1,8 @@
-#include "Application.h"
+#include "Azimuth/Application.h"
 
 #include <raylib/raylib.h>
 
-#include "Window.h"
+#include "Azimuth/Window.h"
 
 Application* Application::m_instance = nullptr;
 
