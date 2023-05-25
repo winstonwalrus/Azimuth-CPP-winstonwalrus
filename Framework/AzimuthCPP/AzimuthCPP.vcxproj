@@ -23,6 +23,8 @@
     <ClCompile Include="src\GameObjects\ATransform.cpp" />
     <ClCompile Include="src\GameObjects\GameObject.cpp" />
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp" />
+    <ClCompile Include="src\GameStates\GameStateManager.cpp" />
+    <ClCompile Include="src\GameStates\IGameState.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -32,7 +34,12 @@
     <ClInclude Include="include\Azimuth\GameObjects\ATransform.h" />
     <ClInclude Include="include\Azimuth\GameObjects\GameObject.h" />
     <ClInclude Include="include\Azimuth\GameObjects\GameObjectManager.h" />
+    <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h" />
+    <ClInclude Include="include\Azimuth\GameStates\IGameState.h" />
     <ClInclude Include="include\Azimuth\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

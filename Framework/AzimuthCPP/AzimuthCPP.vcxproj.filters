@@ -25,6 +25,12 @@
     <Filter Include="Header Files\Game Objects">
       <UniqueIdentifier>{fb2d99fe-db52-4039-b7a0-0782af750dd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Game States">
+      <UniqueIdentifier>{caeccf21-219b-4a94-bf67-9d3b592b2043}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game States">
+      <UniqueIdentifier>{6787c181-c035-4933-8271-b00e8a5315c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
@@ -41,6 +47,12 @@
     </ClCompile>
     <ClCompile Include="src\GameObjects\ATransform.cpp">
       <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\IGameState.cpp">
+      <Filter>Source Files\Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\GameStateManager.cpp">
+      <Filter>Source Files\Game States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,5 +77,14 @@
     <ClInclude Include="include\Azimuth\GameObjects\ATransform.h">
       <Filter>Header Files\Game Objects</Filter>
     </ClInclude>
+    <ClInclude Include="include\Azimuth\GameStates\IGameState.h">
+      <Filter>Header Files\Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h">
+      <Filter>Header Files\Game States</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
