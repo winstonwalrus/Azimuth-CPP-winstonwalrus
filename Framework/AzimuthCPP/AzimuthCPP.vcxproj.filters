@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Game States">
       <UniqueIdentifier>{6787c181-c035-4933-8271-b00e8a5315c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Resources">
+      <UniqueIdentifier>{4588fd57-792e-4e66-8e69-16c0d39cd2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resources">
+      <UniqueIdentifier>{c48fc5ad-c433-4942-aab9-8a3230d4181e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
@@ -53,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="src\GameStates\GameStateManager.cpp">
       <Filter>Source Files\Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources\Resources.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources\TextureResource.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +94,15 @@
     </ClInclude>
     <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h">
       <Filter>Header Files\Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\Resources.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\Resource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\TextureResource.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

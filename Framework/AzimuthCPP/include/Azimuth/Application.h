@@ -8,6 +8,8 @@
 using std::string;
 
 class Window;
+class GameStateManager;
+class GameObjectManager;
 
 class Application
 {
@@ -28,6 +30,8 @@ private:
 	const char* m_applicationDir;
 	
 	Window* m_window;
+	GameStateManager* m_stateManager;
+	GameObjectManager* m_objectManager;
 
 	bool m_shouldQuit;
 

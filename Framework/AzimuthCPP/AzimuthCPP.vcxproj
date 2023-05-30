@@ -25,6 +25,8 @@
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp" />
     <ClCompile Include="src\GameStates\GameStateManager.cpp" />
     <ClCompile Include="src\GameStates\IGameState.cpp" />
+    <ClCompile Include="src\Resources\Resources.cpp" />
+    <ClCompile Include="src\Resources\TextureResource.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +38,9 @@
     <ClInclude Include="include\Azimuth\GameObjects\GameObjectManager.h" />
     <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h" />
     <ClInclude Include="include\Azimuth\GameStates\IGameState.h" />
+    <ClInclude Include="include\Azimuth\Resources\Resource.h" />
+    <ClInclude Include="include\Azimuth\Resources\Resources.h" />
+    <ClInclude Include="include\Azimuth\Resources\TextureResource.h" />
     <ClInclude Include="include\Azimuth\Window.h" />
   </ItemGroup>
   <ItemGroup>

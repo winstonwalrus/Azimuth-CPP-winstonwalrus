@@ -3,6 +3,10 @@
 #include <raylib/raylib.h>
 
 #include "Azimuth/Window.h"
+#include "Azimuth/GameStates/GameStateManager.h"
+#include "Azimuth/GameObjects/GameObjectManager.h"
+
+#include "Azimuth/Resources/Resources.h"
 
 Application* Application::m_instance = nullptr;
 
@@ -28,7 +32,8 @@ void Application::Quit()
 }
 
 Application::Application(Game* _game)
-	: m_game(_game), m_applicationDir(nullptr), m_window(nullptr), m_shouldQuit(false)
+	: m_game(_game), m_applicationDir(nullptr), m_window(nullptr), m_shouldQuit(false),
+	m_stateManager(nullptr), m_objectManager(nullptr)
 {
 }
 
@@ -39,11 +44,34 @@ Application::~Application()
 		delete m_game;
 		m_game = nullptr;
 	}
+
+	if (m_stateManager != nullptr)
+	{
+		delete m_stateManager;
+		m_stateManager = nullptr;
+	}
+
+	if (m_objectManager != nullptr)
+	{
+		delete m_objectManager;
+		m_objectManager = nullptr;
+	}
+
+	if (Resources::m_instance != nullptr)
+	{
+		Resources::m_instance->Unload();
+		delete Resources::m_instance;
+		Resources::m_instance = nullptr;
+	}
 }
 
 void Application::Init()
 {
 	m_window = new Window();
+	m_objectManager = new GameObjectManager();
+	m_stateManager = new GameStateManager();
+
+	Resources::m_instance = new Resources();
 }
 
 void Application::Process()
@@ -52,17 +80,23 @@ void Application::Process()
 
 	m_window->Open();
 
-	m_game->Load();
+	Resources::m_instance->Load();
+
+	m_game->Load(m_stateManager, m_objectManager);
 
 	while (!m_shouldQuit)
 	{
 		float dt = GetFrameTime();
 
 		m_game->Update(dt);
+		m_objectManager->Update(dt);
+		m_stateManager->Update(dt);
 
 		m_window->BeginFrame();
 
 		m_game->Draw();
+		m_objectManager->Draw();
+		m_stateManager->Draw();
 
 		m_window->EndFrame();
 
