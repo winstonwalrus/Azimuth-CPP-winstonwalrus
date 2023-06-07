@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Azimuth.h"
+
 #define PROGRAM_CATEGORY "Program"
 #define WINDOW_CATEGORY "Window"
 #define DEBUG_CATEGORY "Debug"
@@ -18,8 +20,9 @@ using glm::vec2;
 class Config
 {
 public:
-	Config(const string& _name);
-	~Config();
+	DLL Config(const string& _name);
+	DLL Config(const string& _path, const string& _name);
+	DLL ~Config();
 
 	template<typename T>
 	T* Get(string _category, string _key);
@@ -38,12 +41,12 @@ private:
 
 private:
 
-	void Load();
-	string ProcessLine(string _line, string _category);
-	void ProcessValue(string _line, string _category);
-	void ProcessDecimal(string _varName, string _val, string _category);
-	bool IsDecimal(string _val);
-	string ProcessCategory(string _line, string _category);
+	DLL void Load();
+	DLL string ProcessLine(string _line, string _category);
+	DLL void ProcessValue(string _line, string _category);
+	DLL void ProcessDecimal(string _varName, string _val, string _category);
+	DLL bool IsDecimal(string _val);
+	DLL string ProcessCategory(string _line, string _category);
 
 	template<typename T>
 	void InsertValue(string _varName, T _value, string _category, map<string, map<string, T>>& _values);

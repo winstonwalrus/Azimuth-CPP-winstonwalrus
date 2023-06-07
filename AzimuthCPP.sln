@@ -16,6 +16,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AzimuthCPPSample", "Samples
 		{9EF3E798-FFBF-4DBC-9AE5-F4A2059E1958} = {9EF3E798-FFBF-4DBC-9AE5-F4A2059E1958}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AzimuthCPPTests", "Testing\AzimuthCPPTests\AzimuthCPPTests.vcxproj", "{E05F87A6-FAED-4441-8512-1724B746ACDA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9EF3E798-FFBF-4DBC-9AE5-F4A2059E1958} = {9EF3E798-FFBF-4DBC-9AE5-F4A2059E1958}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -40,6 +45,14 @@ Global
 		{68F8EB56-CA34-4391-887A-F5195DFFFAAC}.Release|x64.Build.0 = Release|x64
 		{68F8EB56-CA34-4391-887A-F5195DFFFAAC}.Release|x86.ActiveCfg = Release|Win32
 		{68F8EB56-CA34-4391-887A-F5195DFFFAAC}.Release|x86.Build.0 = Release|Win32
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Debug|x64.ActiveCfg = Debug|x64
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Debug|x64.Build.0 = Debug|x64
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Debug|x86.ActiveCfg = Debug|Win32
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Debug|x86.Build.0 = Debug|Win32
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Release|x64.ActiveCfg = Release|x64
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Release|x64.Build.0 = Release|x64
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Release|x86.ActiveCfg = Release|Win32
+		{E05F87A6-FAED-4441-8512-1724B746ACDA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9EF3E798-FFBF-4DBC-9AE5-F4A2059E1958} = {6A971786-241C-47A3-B235-9A0F045AAB9E}
 		{68F8EB56-CA34-4391-887A-F5195DFFFAAC} = {934CB84F-3350-4B80-AA5C-9C6CCEA9ABB5}
+		{E05F87A6-FAED-4441-8512-1724B746ACDA} = {A0022464-539C-4D87-8838-EBC720E82DDE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A22C32AF-0087-44E0-B24B-CECB91C49B81}

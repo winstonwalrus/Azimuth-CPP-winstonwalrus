@@ -73,19 +73,27 @@ vector<string> Utils::Split(string _string, char _delim, int& _count)
 
 bool Utils::TryParse(string _string, bool& _val)
 {
-    stringstream stream = stringstream(_string);
-    bool val;
+    if (_string == "true" || _string == "false")
+    {
+        _val = _string == "true";
+        return true;
+    }
 
-    // Attempt to parse the string by pushing the stream
-    // into the variable
-    // This returns false if it fails (isn't a valid parse)
-    // This returns true if it succeeds (it successfully set the bool
-    // variable)
-    if (!(stream >> val))
-        return false;
+    return false;
 
-    _val = val;
-    return true;
+    //stringstream stream = stringstream(_string);
+    //bool val;
+
+    //// Attempt to parse the string by pushing the stream
+    //// into the variable
+    //// This returns false if it fails (isn't a valid parse)
+    //// This returns true if it succeeds (it successfully set the bool
+    //// variable)
+    //if (!(stream >> val))
+    //    return false;
+
+    //_val = val;
+    //return true;
 }
 
 bool Utils::TryParse(string _string, int& _val)

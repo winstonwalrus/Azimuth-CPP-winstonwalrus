@@ -17,6 +17,12 @@ Config::Config(const string& _name)
 	Load();
 }
 
+Config::Config(const string& _path, const string& _name)
+{
+	m_path = _path + _name + ".cfg";
+	Load();
+}
+
 Config::~Config() = default;
 
 void Config::Load()
