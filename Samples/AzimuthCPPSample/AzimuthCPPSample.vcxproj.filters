@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\Config">
+      <UniqueIdentifier>{714ca15c-6c25-4d75-b369-3df7f4552451}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,6 +45,15 @@
   <ItemGroup>
     <CopyFileToFolders Include="assets\textures\test.png">
       <Filter>Resource Files</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="assets\config\app.cfg">
+      <Filter>Resource Files\Config</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="assets\config\debug.cfg">
+      <Filter>Resource Files\Config</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="assets\config\window.cfg">
+      <Filter>Resource Files\Config</Filter>
     </CopyFileToFolders>
   </ItemGroup>
 </Project>

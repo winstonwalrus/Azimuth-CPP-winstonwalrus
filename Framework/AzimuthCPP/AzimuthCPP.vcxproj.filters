@@ -66,6 +66,12 @@
     <ClCompile Include="src\Resources\TextureResource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Config.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Azimuth\Window.h">
@@ -103,6 +109,12 @@
     </ClInclude>
     <ClInclude Include="include\Azimuth\Resources\TextureResource.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Config.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Utils.h">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,7 @@ using std::string;
 class Window;
 class GameStateManager;
 class GameObjectManager;
+class Config;
 
 class Application
 {
@@ -27,6 +28,7 @@ private:
 	DLL static Application* m_instance;
 
 	Game* m_game;
+	Config* m_config;
 	const char* m_applicationDir;
 	
 	Window* m_window;

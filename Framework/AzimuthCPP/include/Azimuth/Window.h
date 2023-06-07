@@ -8,6 +8,8 @@
 
 using std::string;
 
+class Config;
+
 class Window
 {
 private:
@@ -17,6 +19,8 @@ private:
 	int m_height;
 	string m_title;
 	Color m_clearColor;
+
+	Config* m_config;
 
 private:
 	DLL Window();

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Config.cpp" />
     <ClCompile Include="src\GameObjects\ATransform.cpp" />
     <ClCompile Include="src\GameObjects\GameObject.cpp" />
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp" />
@@ -27,11 +28,13 @@
     <ClCompile Include="src\GameStates\IGameState.cpp" />
     <ClCompile Include="src\Resources\Resources.cpp" />
     <ClCompile Include="src\Resources\TextureResource.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Azimuth\Application.h" />
     <ClInclude Include="include\Azimuth\Azimuth.h" />
+    <ClInclude Include="include\Azimuth\Config.h" />
     <ClInclude Include="include\Azimuth\Game.h" />
     <ClInclude Include="include\Azimuth\GameObjects\ATransform.h" />
     <ClInclude Include="include\Azimuth\GameObjects\GameObject.h" />
@@ -41,6 +44,7 @@
     <ClInclude Include="include\Azimuth\Resources\Resource.h" />
     <ClInclude Include="include\Azimuth\Resources\Resources.h" />
     <ClInclude Include="include\Azimuth\Resources\TextureResource.h" />
+    <ClInclude Include="include\Azimuth\Utils.h" />
     <ClInclude Include="include\Azimuth\Window.h" />
   </ItemGroup>
   <ItemGroup>

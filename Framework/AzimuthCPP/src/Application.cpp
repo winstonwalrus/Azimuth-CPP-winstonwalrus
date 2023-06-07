@@ -2,6 +2,7 @@
 
 #include <raylib/raylib.h>
 
+#include "Azimuth/Config.h"
 #include "Azimuth/Window.h"
 #include "Azimuth/GameStates/GameStateManager.h"
 #include "Azimuth/GameObjects/GameObjectManager.h"
@@ -33,7 +34,7 @@ void Application::Quit()
 
 Application::Application(Game* _game)
 	: m_game(_game), m_applicationDir(nullptr), m_window(nullptr), m_shouldQuit(false),
-	m_stateManager(nullptr), m_objectManager(nullptr)
+	m_stateManager(nullptr), m_objectManager(nullptr), m_config(nullptr)
 {
 }
 
@@ -63,6 +64,12 @@ Application::~Application()
 		delete Resources::m_instance;
 		Resources::m_instance = nullptr;
 	}
+
+	if (m_config != nullptr)
+	{
+		delete m_config;
+		m_config = nullptr;
+	}
 }
 
 void Application::Init()
@@ -72,6 +79,8 @@ void Application::Init()
 	m_stateManager = new GameStateManager();
 
 	Resources::m_instance = new Resources();
+
+	m_config = new Config("app");
 }
 
 void Application::Process()
@@ -79,6 +88,10 @@ void Application::Process()
 	Init();
 
 	m_window->Open();
+
+	SetExitKey(*m_config->Get<int>("Program", "quitKey"));
+	if (*m_config->Get<bool>("Program", "audioEnabled"))
+		InitAudioDevice();
 
 	Resources::m_instance->Load();
 
@@ -105,6 +118,9 @@ void Application::Process()
 	}
 
 	m_game->Unload();
+
+	if (*m_config->Get<bool>("Program", "audioEnabled"))
+		CloseAudioDevice();
 
 	m_window->Close();
 }
