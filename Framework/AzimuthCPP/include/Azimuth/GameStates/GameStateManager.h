@@ -2,15 +2,13 @@
 
 #include "Azimuth/Azimuth.h"
 
-#include <list>
+#include <vector>
 #include <map>
 #include <functional>
-#include <string>
 
-using std::list;
+using std::vector;
 using std::map;
 using std::function;
-using std::string;
 
 class Application;
 class IGameState;
@@ -18,26 +16,22 @@ class IGameState;
 class GameStateManager
 {
 public:
-	DLL void ActivateState(const string& _id);
-	DLL void DeativateState(const string& _id);
-	DLL void AddState(IGameState* _state);
-	DLL void RemoveState(IGameState* _state);
+    DLL void ActivateState(const char* _id);
+    DLL void DeactivateState(const char* _id);
+    DLL void AddState(IGameState* _state);
 
 private:
-	friend class Application;
+    friend class Application;
 
-	list<IGameState*> m_active;
-	list<function<void()>> m_listUpdates;
-	map<string, IGameState*> m_states;
+    vector<IGameState*> m_active;
+    vector<function<void()>> m_listUpdates;
+    map<const char*, IGameState*> m_states;
 
 private:
-	GameStateManager() = default;
-	DLL ~GameStateManager();
-	GameStateManager(GameStateManager&) = delete;
-	GameStateManager(GameStateManager&&) = delete;
+    DLL GameStateManager();
+    DLL ~GameStateManager();
 
-	DLL void Update(float _dt);
-	DLL void Draw();
+    DLL void Update(float _dt);
+    DLL void Draw();
 
 };
-

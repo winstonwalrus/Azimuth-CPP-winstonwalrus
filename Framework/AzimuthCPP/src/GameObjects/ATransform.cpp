@@ -44,9 +44,9 @@ float ATransform::Rotation() const
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(GlobalTransform(), scale, rot, trans, skew, persp);
+    glm::decompose(GlobalTransform(), scale, rot, trans, skew, perspective);
 
     return glm::eulerAngles(rot).z * RAD2DEG;
 }
@@ -57,9 +57,9 @@ float ATransform::LocalRotation() const
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(m_transform, scale, rot, trans, skew, persp);
+    glm::decompose(m_transform, scale, rot, trans, skew, perspective);
 
     return glm::eulerAngles(rot).z * RAD2DEG;
 }
@@ -70,18 +70,18 @@ void ATransform::SetRotation(const float& _newRot)
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(m_transform, scale, rot, trans, skew, persp);
+    decompose(m_transform, scale, rot, trans, skew, perspective);
 
-    m_transform = glm::translate(mat4(1.f), trans) *
-        glm::toMat4(glm::angleAxis(_newRot * DEG2RAD, vec3(0.f, 0.f, 1.f))) *
+    m_transform = translate(mat4(1.f), trans) *
+        toMat4(angleAxis(_newRot * DEG2RAD, vec3(0, 0, 1.f))) *
         glm::scale(mat4(1.f), scale);
 }
 
 void ATransform::UpdateRotation(const float& _amount)
 {
-    m_transform = m_transform * glm::toMat4(glm::angleAxis(_amount * DEG2RAD, vec3(0.f, 0.f, 1.f)));
+    m_transform = m_transform * toMat4(angleAxis(_amount * DEG2RAD, vec3(0, 0, 1.f)));
 }
 
 void ATransform::Position(float& _x, float& _y) const
@@ -97,9 +97,9 @@ vec2 ATransform::Position() const
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(GlobalTransform(), scale, rot, trans, skew, persp);
+    decompose(GlobalTransform(), scale, rot, trans, skew, perspective);
 
     return trans;
 }
@@ -117,11 +117,26 @@ vec2 ATransform::LocalPosition() const
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(m_transform, scale, rot, trans, skew, persp);
+    decompose(m_transform, scale, rot, trans, skew, perspective);
 
     return trans;
+}
+
+void ATransform::SetPosition(const vec2& _newPosition)
+{
+    vec3 scale;
+    quat rot;
+    vec3 trans;
+    vec3 skew;
+    vec4 perspective;
+
+    decompose(m_transform, scale, rot, trans, skew, perspective);
+
+    m_transform = translate(mat4(1.f), vec3(_newPosition, 0.f)) *
+        toMat4(rot) *
+        glm::scale(mat4(1.f), scale);
 }
 
 void ATransform::SetPosition(const float& _newX, const float& _newY)
@@ -129,29 +144,14 @@ void ATransform::SetPosition(const float& _newX, const float& _newY)
     SetPosition({ _newX, _newY });
 }
 
-void ATransform::SetPosition(const vec2& _newPos)
+void ATransform::UpdatePosition(const vec2& _amount)
 {
-    vec3 scale;
-    quat rot;
-    vec3 trans;
-    vec3 skew;
-    vec4 persp;
-
-    glm::decompose(m_transform, scale, rot, trans, skew, persp);
-
-    m_transform = glm::translate(mat4(1.f), vec3(_newPos, 0.f)) *
-        glm::toMat4(rot) *
-        glm::scale(mat4(1.f), scale);
+    m_transform = glm::translate(m_transform, vec3(_amount, 0.f));
 }
 
-void ATransform::UpdatePosition(const float& _newX, const float& _newY)
+void ATransform::UpdatePosition(const float& _x, const float& _y)
 {
-    UpdatePosition({ _newX, _newY });
-}
-
-void ATransform::UpdatePosition(const vec2& _newPos)
-{
-    m_transform = glm::translate(m_transform, vec3(_newPos, 0.f));
+    UpdatePosition({ _x, _y });
 }
 
 void ATransform::Scale(float& _x, float& _y) const
@@ -167,9 +167,9 @@ vec2 ATransform::Scale() const
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(GlobalTransform(), scale, rot, trans, skew, persp);
+    decompose(GlobalTransform(), scale, rot, trans, skew, perspective);
 
     return scale;
 }
@@ -187,16 +187,11 @@ vec2 ATransform::LocalScale() const
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(m_transform, scale, rot, trans, skew, persp);
+    decompose(m_transform, scale, rot, trans, skew, perspective);
 
     return scale;
-}
-
-void ATransform::SetScale(const float& _newX, const float& _newY)
-{
-    SetScale({ _newX, _newY });
 }
 
 void ATransform::SetScale(const vec2& _newScale)
@@ -205,30 +200,45 @@ void ATransform::SetScale(const vec2& _newScale)
     quat rot;
     vec3 trans;
     vec3 skew;
-    vec4 persp;
+    vec4 perspective;
 
-    glm::decompose(m_transform, scale, rot, trans, skew, persp);
+    decompose(m_transform, scale, rot, trans, skew, perspective);
 
-    m_transform = glm::translate(mat4(1.f), trans) *
-        glm::toMat4(rot) *
+    m_transform = translate(mat4(1.f), trans) *
+        toMat4(rot) *
         glm::scale(mat4(1.f), vec3(_newScale, 1.f));
 }
 
-void ATransform::UpdateScale(const float& _newX, const float& _newY)
+void ATransform::SetScale(const float& _newX, const float& _newY)
 {
-    UpdateScale({ _newX, _newY });
+    SetScale({ _newX, _newY });
 }
 
-void ATransform::UpdateScale(const vec2& _newScale)
+void ATransform::UpdateScale(const vec2& _amount)
 {
-    m_transform = glm::scale(m_transform, vec3(_newScale, 1.f));
+    vec3 scale;
+    quat rot;
+    vec3 trans;
+    vec3 skew;
+    vec4 perspective;
+
+    decompose(m_transform, scale, rot, trans, skew, perspective);
+
+    m_transform = translate(mat4(1.f), trans) *
+        toMat4(rot) *
+        glm::scale(mat4(1.f), scale + vec3(_amount, 1.f));
+}
+
+void ATransform::UpdateScale(const float& _x, const float& _y)
+{
+    UpdateScale({ _x, _y });
 }
 
 void ATransform::TRS(const vec2& _pos, const float& _angle, const vec2& _scale)
 {
     SetPosition(_pos);
-    SetRotation(_angle);
     SetScale(_scale);
+    SetRotation(_angle);
 }
 
 mat4 ATransform::GlobalTransform() const
@@ -244,7 +254,7 @@ void ATransform::AddChild(ATransform* _child)
                 _child->m_parent->RemoveChild(_child);
 
             _child->m_parent = this;
-            m_children.emplace_back(_child);
+            m_children.push_back(_child);
         });
 }
 
@@ -256,9 +266,9 @@ void ATransform::RemoveChild(ATransform* _child)
             {
                 _child->m_parent = nullptr;
 
-                const list<ATransform*>::iterator iter = std::ranges::find(m_children, _child);
+                const vector<ATransform*>::iterator iter = std::ranges::find(m_children, _child);
                 if (iter != m_children.end())
-                    m_children.erase(iter);
+                    m_children.erase(iter, iter);
             }
         });
 }

@@ -13,37 +13,46 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Core">
-      <UniqueIdentifier>{c85226bc-5496-4efa-be1b-96926306818d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Core">
-      <UniqueIdentifier>{72d72e80-eab8-4dc1-b69a-118febd91b8c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Game Objects">
-      <UniqueIdentifier>{4d87d13e-464c-42d5-b752-426ff3be2d37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game Objects">
-      <UniqueIdentifier>{fb2d99fe-db52-4039-b7a0-0782af750dd1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Game States">
-      <UniqueIdentifier>{caeccf21-219b-4a94-bf67-9d3b592b2043}</UniqueIdentifier>
+      <UniqueIdentifier>{e2bb91d4-aa2f-470c-bd27-83237da9f755}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Game States">
-      <UniqueIdentifier>{6787c181-c035-4933-8271-b00e8a5315c7}</UniqueIdentifier>
+      <UniqueIdentifier>{2ce75ab2-ba5a-4952-9175-436a6239a671}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Resources">
-      <UniqueIdentifier>{4588fd57-792e-4e66-8e69-16c0d39cd2bd}</UniqueIdentifier>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{1b50bb76-f925-467f-91fc-c902d484c5d1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Resources">
-      <UniqueIdentifier>{c48fc5ad-c433-4942-aab9-8a3230d4181e}</UniqueIdentifier>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{8a0b5daf-53b9-4a9f-b606-ba437ca11c2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{f920690e-779a-4f57-8281-2d74870e9be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{0d89fb97-237b-404d-bd10-68a2f6fa0d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects">
+      <UniqueIdentifier>{1acd404d-2ab4-4e1b-b7e1-6247ad5abd92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game Objects">
+      <UniqueIdentifier>{ad86556e-9e3f-4e0b-bbee-5639d4d903e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameStates\GameStateManager.cpp">
+      <Filter>Source Files\Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameStates\IGameState.cpp">
+      <Filter>Source Files\Game States</Filter>
+    </ClCompile>
     <ClCompile Include="src\Application.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Window.cpp">
       <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Utilities.cpp">
+      <Filter>Source Files\Utils</Filter>
     </ClCompile>
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp">
       <Filter>Source Files\Game Objects</Filter>
@@ -51,32 +60,14 @@
     <ClCompile Include="src\GameObjects\GameObject.cpp">
       <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
+    <ClCompile Include="src\Utils\Config.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
     <ClCompile Include="src\GameObjects\ATransform.cpp">
       <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameStates\IGameState.cpp">
-      <Filter>Source Files\Game States</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameStates\GameStateManager.cpp">
-      <Filter>Source Files\Game States</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Resources\Resources.cpp">
-      <Filter>Source Files\Resources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Resources\TextureResource.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Config.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utils.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Azimuth\Window.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
     <ClInclude Include="include\Azimuth\Application.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
@@ -86,38 +77,32 @@
     <ClInclude Include="include\Azimuth\Game.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="include\Azimuth\GameObjects\GameObjectManager.h">
+    <ClInclude Include="include\Azimuth\Window.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\GameObjects\ATransform.h">
       <Filter>Header Files\Game Objects</Filter>
     </ClInclude>
     <ClInclude Include="include\Azimuth\GameObjects\GameObject.h">
       <Filter>Header Files\Game Objects</Filter>
     </ClInclude>
-    <ClInclude Include="include\Azimuth\GameObjects\ATransform.h">
+    <ClInclude Include="include\Azimuth\GameObjects\GameObjectManager.h">
       <Filter>Header Files\Game Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Azimuth\GameStates\IGameState.h">
-      <Filter>Header Files\Game States</Filter>
     </ClInclude>
     <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h">
       <Filter>Header Files\Game States</Filter>
     </ClInclude>
-    <ClInclude Include="include\Azimuth\Resources\Resources.h">
-      <Filter>Header Files\Resources</Filter>
+    <ClInclude Include="include\Azimuth\GameStates\IGameState.h">
+      <Filter>Header Files\Game States</Filter>
     </ClInclude>
-    <ClInclude Include="include\Azimuth\Resources\Resource.h">
-      <Filter>Header Files\Resources</Filter>
+    <ClInclude Include="include\Azimuth\Utils\Config.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="include\Azimuth\Resources\TextureResource.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\Azimuth\Utils\LINQ.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="include\Azimuth\Config.h">
-      <Filter>Header Files\Core</Filter>
+    <ClInclude Include="include\Azimuth\Utils\Utilities.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="include\Azimuth\Utils.h">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

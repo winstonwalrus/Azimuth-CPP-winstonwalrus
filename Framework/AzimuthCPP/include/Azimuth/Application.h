@@ -28,14 +28,16 @@ private:
 	DLL static Application* m_instance;
 
 	Game* m_game;
-	Config* m_config;
 	const char* m_applicationDir;
 	
 	Window* m_window;
-	GameStateManager* m_stateManager;
-	GameObjectManager* m_objectManager;
+	Config* m_appConfig;
+	Config* m_debugConfig;
 
 	bool m_shouldQuit;
+
+	GameStateManager* m_stateManager;
+	GameObjectManager* m_gameObjectManager;
 
 private:
 	DLL Application(Game* _game);
@@ -43,6 +45,7 @@ private:
 
 	DLL void Init();
 	DLL void Process();
+	DLL void Terminate();
 
 };
 

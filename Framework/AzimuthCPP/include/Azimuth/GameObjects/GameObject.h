@@ -12,10 +12,10 @@ public:
 	DLL GameObject(const char* _name, GameStateManager* _gsMan, GameObjectManager* _goMan);
 	DLL virtual ~GameObject();
 
-	virtual void Load() {}
-	virtual void Update(float _dt) {}
-	virtual void Draw() {}
-	virtual void Unload() {}
+	DLL virtual void Load();
+	DLL virtual void Update(float _dt);
+	DLL virtual void Draw();
+	DLL virtual void Unload();
 
 	DLL void SetName(const char* _name);
 	DLL void SetTag(const char* _tag);

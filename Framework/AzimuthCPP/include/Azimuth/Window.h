@@ -4,9 +4,7 @@
 
 #include <raylib/raylib.h>
 
-#include <string>
-
-using std::string;
+class Config;
 
 class Config;
 
@@ -17,7 +15,7 @@ private:
 
 	int m_width;
 	int m_height;
-	string m_title;
+	char* m_title;
 	Color m_clearColor;
 
 	Config* m_config;
@@ -28,7 +26,7 @@ private:
 	Window(Window&&) = delete;
 	~Window() = default;
 
-	DLL void Open();
+	DLL void Open(int _quitKey);
 	DLL void Close();
 
 	DLL void BeginFrame();

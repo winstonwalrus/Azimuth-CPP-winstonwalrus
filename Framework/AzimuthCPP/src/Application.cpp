@@ -2,12 +2,11 @@
 
 #include <raylib/raylib.h>
 
-#include "Azimuth/Config.h"
 #include "Azimuth/Window.h"
+#include "Azimuth/Utils/Config.h"
+
 #include "Azimuth/GameStates/GameStateManager.h"
 #include "Azimuth/GameObjects/GameObjectManager.h"
-
-#include "Azimuth/Resources/Resources.h"
 
 Application* Application::m_instance = nullptr;
 
@@ -34,7 +33,7 @@ void Application::Quit()
 
 Application::Application(Game* _game)
 	: m_game(_game), m_applicationDir(nullptr), m_window(nullptr), m_shouldQuit(false),
-	m_stateManager(nullptr), m_objectManager(nullptr), m_config(nullptr)
+	m_stateManager(nullptr), m_gameObjectManager(nullptr)
 {
 }
 
@@ -46,70 +45,58 @@ Application::~Application()
 		m_game = nullptr;
 	}
 
+	if (m_window != nullptr)
+	{
+		delete m_window;
+		m_window = nullptr;
+	}
+
 	if (m_stateManager != nullptr)
 	{
 		delete m_stateManager;
 		m_stateManager = nullptr;
 	}
 
-	if (m_objectManager != nullptr)
+	if (m_gameObjectManager != nullptr)
 	{
-		delete m_objectManager;
-		m_objectManager = nullptr;
-	}
-
-	if (Resources::m_instance != nullptr)
-	{
-		Resources::m_instance->Unload();
-		delete Resources::m_instance;
-		Resources::m_instance = nullptr;
-	}
-
-	if (m_config != nullptr)
-	{
-		delete m_config;
-		m_config = nullptr;
+		delete m_gameObjectManager;
+		m_gameObjectManager = nullptr;
 	}
 }
 
 void Application::Init()
 {
 	m_window = new Window();
-	m_objectManager = new GameObjectManager();
+
 	m_stateManager = new GameStateManager();
+	m_gameObjectManager = new GameObjectManager();
 
-	Resources::m_instance = new Resources();
+	m_debugConfig = new Config("debug");
+	m_appConfig = new Config("app");
 
-	m_config = new Config("app");
+	m_window->Open(*m_appConfig->Get<int>("Application", "quitKey"));
+	m_game->Load(m_stateManager, m_gameObjectManager);
 }
 
 void Application::Process()
 {
 	Init();
 
-	m_window->Open();
-
-	SetExitKey(*m_config->Get<int>("Program", "quitKey"));
-	if (*m_config->Get<bool>("Program", "audioEnabled"))
-		InitAudioDevice();
-
-	Resources::m_instance->Load();
-
-	m_game->Load(m_stateManager, m_objectManager);
-
 	while (!m_shouldQuit)
 	{
 		float dt = GetFrameTime();
 
 		m_game->Update(dt);
-		m_objectManager->Update(dt);
+
 		m_stateManager->Update(dt);
+		m_gameObjectManager->Update(dt);
 
 		m_window->BeginFrame();
 
 		m_game->Draw();
-		m_objectManager->Draw();
+
 		m_stateManager->Draw();
+		m_gameObjectManager->Draw();
 
 		m_window->EndFrame();
 
@@ -117,10 +104,11 @@ void Application::Process()
 			m_shouldQuit = true;
 	}
 
+	Terminate();
+}
+
+void Application::Terminate()
+{
 	m_game->Unload();
-
-	if (*m_config->Get<bool>("Program", "audioEnabled"))
-		CloseAudioDevice();
-
 	m_window->Close();
 }

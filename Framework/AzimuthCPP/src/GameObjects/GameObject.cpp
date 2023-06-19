@@ -3,18 +3,28 @@
 #include "Azimuth/GameObjects/ATransform.h"
 
 GameObject::GameObject(const char* _name, GameStateManager* _gsMan, GameObjectManager* _goMan)
-	: m_name(_name), m_stateManager(_gsMan), m_objectManager(_goMan), 
-	m_transform(new ATransform()), m_tag("Default")
+	: m_stateManager(_gsMan), m_objectManager(_goMan), m_name(_name), m_tag("Default"), m_transform(new ATransform())
 {
 }
 
 GameObject::~GameObject()
 {
-	if (m_transform != nullptr)
-	{
-		delete m_transform;
-		m_transform = nullptr;
-	}
+}
+
+void GameObject::Load()
+{
+}
+
+void GameObject::Update(float _dt)
+{
+}
+
+void GameObject::Draw()
+{
+}
+
+void GameObject::Unload()
+{
 }
 
 void GameObject::SetName(const char* _name)

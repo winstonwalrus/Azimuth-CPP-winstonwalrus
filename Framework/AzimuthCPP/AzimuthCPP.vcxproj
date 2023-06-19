@@ -20,35 +20,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Config.cpp" />
     <ClCompile Include="src\GameObjects\ATransform.cpp" />
     <ClCompile Include="src\GameObjects\GameObject.cpp" />
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp" />
     <ClCompile Include="src\GameStates\GameStateManager.cpp" />
     <ClCompile Include="src\GameStates\IGameState.cpp" />
-    <ClCompile Include="src\Resources\Resources.cpp" />
-    <ClCompile Include="src\Resources\TextureResource.cpp" />
-    <ClCompile Include="src\Utils.cpp" />
+    <ClCompile Include="src\Utils\Config.cpp" />
+    <ClCompile Include="src\Utils\Utilities.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Azimuth\Application.h" />
     <ClInclude Include="include\Azimuth\Azimuth.h" />
-    <ClInclude Include="include\Azimuth\Config.h" />
     <ClInclude Include="include\Azimuth\Game.h" />
     <ClInclude Include="include\Azimuth\GameObjects\ATransform.h" />
     <ClInclude Include="include\Azimuth\GameObjects\GameObject.h" />
     <ClInclude Include="include\Azimuth\GameObjects\GameObjectManager.h" />
     <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h" />
     <ClInclude Include="include\Azimuth\GameStates\IGameState.h" />
-    <ClInclude Include="include\Azimuth\Resources\Resource.h" />
-    <ClInclude Include="include\Azimuth\Resources\Resources.h" />
-    <ClInclude Include="include\Azimuth\Resources\TextureResource.h" />
-    <ClInclude Include="include\Azimuth\Utils.h" />
+    <ClInclude Include="include\Azimuth\Utils\Config.h" />
+    <ClInclude Include="include\Azimuth\Utils\LINQ.h" />
+    <ClInclude Include="include\Azimuth\Utils\Utilities.h" />
     <ClInclude Include="include\Azimuth\Window.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -129,7 +122,7 @@
       <PreprocessorDefinitions>DLL_EXPORT;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,7 +144,7 @@ copy /Y "$(OutDir)Azimuth.dll" "$(SolutionDir)Builds\$(Configuration)\Azimuth.dl
       <PreprocessorDefinitions>DLL_EXPORT;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -173,7 +166,7 @@ copy /Y "$(OutDir)Azimuth.dll" "$(SolutionDir)Builds\$(Configuration)\Azimuth.dl
       <PreprocessorDefinitions>DLL_EXPORT;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -195,7 +188,7 @@ copy /Y "$(OutDir)Azimuth.dll" "$(SolutionDir)Builds\$(Configuration)\Azimuth.dl
       <PreprocessorDefinitions>DLL_EXPORT;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\include\;$(ProjectDir)include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
