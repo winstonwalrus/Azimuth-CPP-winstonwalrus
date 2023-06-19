@@ -16,6 +16,9 @@
     <Filter Include="Resource Files\Config">
       <UniqueIdentifier>{165fd8db-ffbd-4219-bfcb-2c1579ee2609}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{f4453b42-e7d3-41cb-bf67-ea2e0d0e1249}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,9 +27,21 @@
     <ClCompile Include="SampleGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SamplePlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SamplePlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -39,6 +54,9 @@
     </CopyFileToFolders>
     <CopyFileToFolders Include="assets\config\debug.cfg">
       <Filter>Resource Files\Config</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="assets\textures\test.png">
+      <Filter>Resource Files\Textures</Filter>
     </CopyFileToFolders>
   </ItemGroup>
 </Project>

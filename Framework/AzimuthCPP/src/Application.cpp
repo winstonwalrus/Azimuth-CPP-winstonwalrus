@@ -4,6 +4,7 @@
 
 #include "Azimuth/Window.h"
 #include "Azimuth/Utils/Config.h"
+#include "Azimuth/Resources/Resources.h"
 
 #include "Azimuth/GameStates/GameStateManager.h"
 #include "Azimuth/GameObjects/GameObjectManager.h"
@@ -33,7 +34,7 @@ void Application::Quit()
 
 Application::Application(Game* _game)
 	: m_game(_game), m_applicationDir(nullptr), m_window(nullptr), m_shouldQuit(false),
-	m_stateManager(nullptr), m_gameObjectManager(nullptr)
+	m_stateManager(nullptr), m_gameObjectManager(nullptr), m_appConfig(nullptr), m_debugConfig(nullptr)
 {
 }
 
@@ -62,6 +63,24 @@ Application::~Application()
 		delete m_gameObjectManager;
 		m_gameObjectManager = nullptr;
 	}
+
+	if (m_appConfig != nullptr)
+	{
+		delete m_appConfig;
+		m_appConfig = nullptr;
+	}
+
+	if (m_debugConfig != nullptr)
+	{
+		delete m_debugConfig;
+		m_debugConfig = nullptr;
+	}
+
+	if (Resources::m_instance != nullptr)
+	{
+		delete Resources::m_instance;
+		Resources::m_instance = nullptr;
+	}
 }
 
 void Application::Init()
@@ -75,6 +94,9 @@ void Application::Init()
 	m_appConfig = new Config("app");
 
 	m_window->Open(*m_appConfig->Get<int>("Application", "quitKey"));
+	Resources::m_instance = new Resources();
+	Resources::m_instance->Load();
+
 	m_game->Load(m_stateManager, m_gameObjectManager);
 }
 
@@ -109,6 +131,8 @@ void Application::Process()
 
 void Application::Terminate()
 {
+	Resources::m_instance->Unload();
+
 	m_game->Unload();
 	m_window->Close();
 }
