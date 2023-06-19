@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Game Objects">
       <UniqueIdentifier>{ad86556e-9e3f-4e0b-bbee-5639d4d903e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Resources">
+      <UniqueIdentifier>{a2dae081-10f9-4afa-8cd9-30b8d3a1dd85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resources">
+      <UniqueIdentifier>{b269ce87-b520-4e32-ad8b-d50efd5af68a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameStates\GameStateManager.cpp">
@@ -65,6 +71,18 @@
     </ClCompile>
     <ClCompile Include="src\GameObjects\ATransform.cpp">
       <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources\Resources.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources\TextureResource.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources\SoundResource.cpp">
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources\FontResource.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +121,21 @@
     </ClInclude>
     <ClInclude Include="include\Azimuth\Utils\Utilities.h">
       <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\Resource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\Resources.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\TextureResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\SoundResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Resources\FontResource.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
