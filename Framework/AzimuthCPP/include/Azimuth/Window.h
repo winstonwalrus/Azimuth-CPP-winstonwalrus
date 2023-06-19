@@ -6,6 +6,8 @@
 
 class Config;
 
+class Config;
+
 class Window
 {
 private:

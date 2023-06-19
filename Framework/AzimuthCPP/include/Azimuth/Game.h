@@ -11,6 +11,9 @@ public:
 protected:
 	friend class Application;
 
+	GameStateManager* m_stateManager;
+	GameObjectManager* m_objectManager;
+
 protected:
 	virtual void Load(GameStateManager* _gsMan, GameObjectManager* _goMan) = 0;
 	virtual void Unload() {}
