@@ -216,7 +216,17 @@ void ATransform::SetScale(const float& _newX, const float& _newY)
 
 void ATransform::UpdateScale(const vec2& _amount)
 {
-    m_transform = scale(m_transform, vec3(_amount, 1.f));
+    vec3 scale;
+    quat rot;
+    vec3 trans;
+    vec3 skew;
+    vec4 perspective;
+
+    decompose(m_transform, scale, rot, trans, skew, perspective);
+
+    m_transform = translate(mat4(1.f), trans) *
+        toMat4(rot) *
+        glm::scale(mat4(1.f), scale + vec3(_amount, 1.f));
 }
 
 void ATransform::UpdateScale(const float& _x, const float& _y)

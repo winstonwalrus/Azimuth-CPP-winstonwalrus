@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Game.h>
+#include <Azimuth/Game.h>
 
 class SampleGame : public Game
 {
