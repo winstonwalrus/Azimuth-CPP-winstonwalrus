@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Collections\HashTable.cpp" />
     <ClCompile Include="src\GameObjects\ATransform.cpp" />
     <ClCompile Include="src\GameObjects\GameObject.cpp" />
     <ClCompile Include="src\GameObjects\GameObjectManager.cpp" />
@@ -36,17 +37,24 @@
   <ItemGroup>
     <ClInclude Include="include\Azimuth\Application.h" />
     <ClInclude Include="include\Azimuth\Azimuth.h" />
+    <ClInclude Include="include\Azimuth\Collections\HashTable.h" />
     <ClInclude Include="include\Azimuth\Game.h" />
     <ClInclude Include="include\Azimuth\GameObjects\ATransform.h" />
     <ClInclude Include="include\Azimuth\GameObjects\GameObject.h" />
     <ClInclude Include="include\Azimuth\GameObjects\GameObjectManager.h" />
     <ClInclude Include="include\Azimuth\GameStates\GameStateManager.h" />
     <ClInclude Include="include\Azimuth\GameStates\IGameState.h" />
+    <ClInclude Include="include\Azimuth\Patterns\Factory.h" />
+    <ClInclude Include="include\Azimuth\Patterns\Prototype.h" />
+    <ClInclude Include="include\Azimuth\Patterns\Singleton.h" />
     <ClInclude Include="include\Azimuth\Resources\FontResource.h" />
     <ClInclude Include="include\Azimuth\Resources\Resource.h" />
     <ClInclude Include="include\Azimuth\Resources\Resources.h" />
     <ClInclude Include="include\Azimuth\Resources\SoundResource.h" />
     <ClInclude Include="include\Azimuth\Resources\TextureResource.h" />
+    <ClInclude Include="include\Azimuth\Structures\QuadTree.h" />
+    <ClInclude Include="include\Azimuth\Structures\QuadTreeData.h" />
+    <ClInclude Include="include\Azimuth\Structures\QuadTreeNode.h" />
     <ClInclude Include="include\Azimuth\Utils\Config.h" />
     <ClInclude Include="include\Azimuth\Utils\LINQ.h" />
     <ClInclude Include="include\Azimuth\Utils\Utilities.h" />

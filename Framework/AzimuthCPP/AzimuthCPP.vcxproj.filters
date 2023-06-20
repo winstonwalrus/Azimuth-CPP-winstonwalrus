@@ -43,6 +43,18 @@
     <Filter Include="Source Files\Resources">
       <UniqueIdentifier>{b269ce87-b520-4e32-ad8b-d50efd5af68a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Collections">
+      <UniqueIdentifier>{bcf4fe1f-832b-4776-b499-58044dd813c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Collections">
+      <UniqueIdentifier>{2cbf9737-6c98-46ff-95fa-598f08e1adac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Structures">
+      <UniqueIdentifier>{9b2d9762-7aed-49e7-83a2-c2f4908cfbaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Patterns">
+      <UniqueIdentifier>{503426cf-6018-4da6-b148-24350e437182}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameStates\GameStateManager.cpp">
@@ -82,7 +94,10 @@
       <Filter>Source Files\Resources</Filter>
     </ClCompile>
     <ClCompile Include="src\Resources\FontResource.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Collections\HashTable.cpp">
+      <Filter>Source Files\Collections</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,7 +150,28 @@
       <Filter>Header Files\Resources</Filter>
     </ClInclude>
     <ClInclude Include="include\Azimuth\Resources\FontResource.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Collections\HashTable.h">
+      <Filter>Header Files\Collections</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Structures\QuadTree.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Structures\QuadTreeData.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Structures\QuadTreeNode.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Patterns\Singleton.h">
+      <Filter>Header Files\Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Patterns\Factory.h">
+      <Filter>Header Files\Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Patterns\Prototype.h">
+      <Filter>Header Files\Patterns</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
