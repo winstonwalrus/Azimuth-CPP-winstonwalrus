@@ -18,6 +18,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AzimuthCPPSample", "Samples
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AzimuthProjectTemplate", "Samples\AzimuthProjectTemplate\AzimuthProjectTemplate.vcxproj", "{75A39071-7031-469E-BC32-8C8770824239}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Azimuth-LINQ-Tests", "Testing\Azimuth-LINQ-Tests\Azimuth-LINQ-Tests.vcxproj", "{2984AD9C-E44E-4669-A33A-821393F48B07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -50,6 +52,14 @@ Global
 		{75A39071-7031-469E-BC32-8C8770824239}.Release|x64.Build.0 = Release|x64
 		{75A39071-7031-469E-BC32-8C8770824239}.Release|x86.ActiveCfg = Release|Win32
 		{75A39071-7031-469E-BC32-8C8770824239}.Release|x86.Build.0 = Release|Win32
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Debug|x64.ActiveCfg = Debug|x64
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Debug|x64.Build.0 = Debug|x64
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Debug|x86.ActiveCfg = Debug|Win32
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Debug|x86.Build.0 = Debug|Win32
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Release|x64.ActiveCfg = Release|x64
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Release|x64.Build.0 = Release|x64
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Release|x86.ActiveCfg = Release|Win32
+		{2984AD9C-E44E-4669-A33A-821393F48B07}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +68,7 @@ Global
 		{9EF3E798-FFBF-4DBC-9AE5-F4A2059E1958} = {6A971786-241C-47A3-B235-9A0F045AAB9E}
 		{68F8EB56-CA34-4391-887A-F5195DFFFAAC} = {934CB84F-3350-4B80-AA5C-9C6CCEA9ABB5}
 		{75A39071-7031-469E-BC32-8C8770824239} = {934CB84F-3350-4B80-AA5C-9C6CCEA9ABB5}
+		{2984AD9C-E44E-4669-A33A-821393F48B07} = {A0022464-539C-4D87-8838-EBC720E82DDE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A22C32AF-0087-44E0-B24B-CECB91C49B81}
