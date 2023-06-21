@@ -15,7 +15,7 @@ using std::vector;
 using std::string;
 
 Config::Config(string _configName)
-	: m_path((string(Application::GetApplicationDirectory()) + "\\assets\\config\\" + _configName + ".cfg").c_str())
+	: m_path(("assets\\config\\" + _configName + ".cfg").c_str())
 {
 	Load();
 }

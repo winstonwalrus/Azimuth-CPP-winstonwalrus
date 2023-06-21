@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 
-#include <Azimuth/Config.h>
+#include <Azimuth/Utils/Config.h>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -15,7 +15,7 @@ namespace AzimuthCPPTests
 
 		TEST_CLASS_INITIALIZE(ConfigTestInit)
 		{
-			config = new Config("assets\\config\\", "test");
+			config = new Config("test");
 		}
 		
 		TEST_METHOD(ConfigCreation)
