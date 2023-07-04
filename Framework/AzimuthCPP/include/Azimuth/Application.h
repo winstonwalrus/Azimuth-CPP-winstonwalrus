@@ -22,10 +22,17 @@ public:
 	DLL static void GetWindowSize(int& _width, int& _height);
 	DLL static Window* GetWindow();
 
+	DLL static void Pause();
+	DLL static void Unpause();
+	DLL static void SetPause(bool _b);
+
 	DLL static void Quit();
+
 
 private:
 	DLL static Application* m_instance;
+
+	static bool m_paused;
 
 	Game* m_game;
 	const char* m_applicationDir;

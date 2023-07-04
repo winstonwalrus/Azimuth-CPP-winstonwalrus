@@ -27,6 +27,21 @@ Window* Application::GetWindow()
 	return m_instance->m_window;
 }
 
+void Application::Pause()
+{
+	m_paused = true;
+}
+
+void Application::Unpause()
+{
+	m_paused = false;
+}
+
+void Application::SetPause(bool _b)
+{
+	m_paused = _b;
+}
+
 void Application::Quit()
 {
 	m_instance->m_shouldQuit = true;
