@@ -5,6 +5,7 @@
 class GameStateManager;
 class GameObjectManager;
 class ATransform;
+class Sprite;
 
 class GameObject
 {
@@ -16,6 +17,8 @@ public:
 	DLL virtual void Update(float _dt);
 	DLL virtual void Draw();
 	DLL virtual void Unload();
+
+	DLL void DrawSprite();
 
 	DLL void SetName(const char* _name);
 	DLL void SetTag(const char* _tag);
@@ -31,6 +34,8 @@ protected:
 
 private:
 	ATransform* m_transform;
+
+	Sprite* m_sprite;
 
 	const char* m_name;
 	const char* m_tag;

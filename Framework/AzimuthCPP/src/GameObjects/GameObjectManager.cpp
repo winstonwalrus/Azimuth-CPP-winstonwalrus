@@ -71,5 +71,8 @@ void GameObjectManager::Update(float _dt)
 void GameObjectManager::Draw()
 {
 	for (auto iter = m_gameObjects.begin(); iter != m_gameObjects.end(); iter++)
+	{
+		(*iter)->DrawSprite();
 		(*iter)->Draw();
+	}
 }

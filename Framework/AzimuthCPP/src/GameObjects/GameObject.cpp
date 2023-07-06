@@ -1,6 +1,7 @@
 #include "Azimuth/GameObjects/GameObject.h"
 
 #include "Azimuth/GameObjects/ATransform.h"
+#include "Azimuth/Sprites/Sprite.h"
 
 GameObject::GameObject(const char* _name, GameStateManager* _gsMan, GameObjectManager* _goMan)
 	: m_stateManager(_gsMan), m_objectManager(_goMan), m_name(_name), m_tag("Default"), m_transform(new ATransform())
@@ -21,6 +22,15 @@ void GameObject::Update(float _dt)
 
 void GameObject::Draw()
 {
+}
+
+void GameObject::DrawSprite()
+{
+	if (m_sprite)
+	{
+		m_sprite->m_position = m_transform->Position();
+		m_sprite->Draw();
+	}
 }
 
 void GameObject::Unload()
