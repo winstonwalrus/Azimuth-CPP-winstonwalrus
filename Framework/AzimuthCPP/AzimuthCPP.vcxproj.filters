@@ -55,6 +55,12 @@
     <Filter Include="Header Files\Patterns">
       <UniqueIdentifier>{503426cf-6018-4da6-b148-24350e437182}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Sprites">
+      <UniqueIdentifier>{6b9702e5-7ff9-45ff-8170-27b8585eaaad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sprites">
+      <UniqueIdentifier>{68fda317-535e-49b9-85d8-763aa3571708}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameStates\GameStateManager.cpp">
@@ -98,6 +104,15 @@
     </ClCompile>
     <ClCompile Include="src\Collections\HashTable.cpp">
       <Filter>Source Files\Collections</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprites\RectangleSprite.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprites\CircleSprite.cpp">
+      <Filter>Source Files\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sprites\TextureSprite.cpp">
+      <Filter>Source Files\Sprites</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +187,18 @@
     </ClInclude>
     <ClInclude Include="include\Azimuth\Patterns\Prototype.h">
       <Filter>Header Files\Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Sprites\RectangleSprite.h">
+      <Filter>Header Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Sprites\Sprite.h">
+      <Filter>Header Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Sprites\CircleSprite.h">
+      <Filter>Header Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Azimuth\Sprites\TextureSprite.h">
+      <Filter>Header Files\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
