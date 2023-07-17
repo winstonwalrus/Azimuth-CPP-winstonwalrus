@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Azimuth/Azimuth.h"
 #include "Azimuth/Sprites/Sprite.h"
 
 
@@ -12,9 +13,9 @@ public:
 
 
 public:
-	CircleSprite(float _radius);
-	CircleSprite(float _radius, Color _color);
+	DLL CircleSprite(float _radius);
+	DLL CircleSprite(float _radius, Color _color);
 
-	void Draw() override;
+	DLL void Draw() override;
 };
 

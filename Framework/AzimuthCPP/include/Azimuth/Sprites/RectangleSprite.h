@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Azimuth/Azimuth.h"
 #include "Azimuth/Sprites/Sprite.h"
 
 
@@ -15,14 +16,12 @@ public:
 
 
 public:
-	RectangleSprite(float _size);
-	RectangleSprite(float _size, Color _color);
-	RectangleSprite(float _size, Color _color, float _angle);
-	RectangleSprite(float _width, float _height);
-	RectangleSprite(float _width, float _height, Color _color);
-	RectangleSprite(float _width, float _height, Color _color, float _angle);
+	DLL RectangleSprite(float _size);
+	DLL RectangleSprite(float _size, Color _color);
+	DLL RectangleSprite(float _size, Color _color, float _angle);
+	DLL RectangleSprite(float _width, float _height);
+	DLL RectangleSprite(float _width, float _height, Color _color);
+	DLL RectangleSprite(float _width, float _height, Color _color, float _angle);
 
-	~RectangleSprite();
-
-	void Draw() override;
+	DLL void Draw() override;
 };

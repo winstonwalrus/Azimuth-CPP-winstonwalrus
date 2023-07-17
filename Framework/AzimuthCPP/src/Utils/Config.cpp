@@ -29,7 +29,10 @@ void Config::Load()
 	fstream file = fstream(m_path, ios::in);
 
 	if (file.fail() || file.bad())
+	{
+		std::cout << "config file at " << m_path << " cannot be read!" << std::endl;
 		return;
+	}
 
 	string line = "";
 	string currentCategory = "";

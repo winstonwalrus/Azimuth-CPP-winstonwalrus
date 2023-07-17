@@ -32,10 +32,11 @@ protected:
 	GameStateManager* m_stateManager;
 	GameObjectManager* m_objectManager;
 
+	Sprite* m_sprite;
+
+
 private:
 	ATransform* m_transform;
-
-	Sprite* m_sprite;
 
 	const char* m_name;
 	const char* m_tag;

@@ -22,12 +22,12 @@ public:
 
 
 public:
-	TextureSprite();
-	TextureSprite(string _texture, float _size);
-	TextureSprite(string _texture, float _width, float _height);
-	TextureSprite(string _texture, float _size, Color _color);
-	TextureSprite(string _texture, float _width, float _height, Color _color);
-	TextureSprite(string _texture, float _size, Color _color, float _angle);
-	TextureSprite(string _texture, float _width, float _height, Color _color, float _angle);
+	DLL TextureSprite();
+	DLL TextureSprite(string _texture, float _size);
+	DLL TextureSprite(string _texture, float _width, float _height);
+	DLL TextureSprite(string _texture, float _size, Color _color);
+	DLL TextureSprite(string _texture, float _width, float _height, Color _color);
+	DLL TextureSprite(string _texture, float _size, Color _color, float _angle);
+	DLL TextureSprite(string _texture, float _width, float _height, Color _color, float _angle);
 };
 
