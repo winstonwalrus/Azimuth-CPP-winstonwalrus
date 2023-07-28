@@ -124,10 +124,13 @@ void Application::Process()
 	{
 		float dt = GetFrameTime();
 
-		m_game->Update(dt);
+		if (!m_paused)
+		{
+			m_game->Update(dt);
 
-		m_stateManager->Update(dt);
-		m_gameObjectManager->Update(dt);
+			m_stateManager->Update(dt);
+			m_gameObjectManager->Update(dt);
+		}
 
 		m_window->BeginFrame();
 
@@ -135,6 +138,7 @@ void Application::Process()
 
 		m_stateManager->Draw();
 		m_gameObjectManager->Draw();
+		m_stateManager->LateDraw();
 
 		m_window->EndFrame();
 
