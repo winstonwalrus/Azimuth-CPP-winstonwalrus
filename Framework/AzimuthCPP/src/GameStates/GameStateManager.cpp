@@ -35,6 +35,12 @@ void GameStateManager::Draw()
         state->Draw();
 }
 
+void GameStateManager::LateDraw()
+{
+    for (auto state : m_active)
+        state->LateDraw();
+}
+
 void GameStateManager::ActivateState(const char* _id)
 {
     if (m_states.find(_id) == m_states.end())

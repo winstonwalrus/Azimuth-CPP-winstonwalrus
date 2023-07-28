@@ -33,5 +33,6 @@ private:
 
     DLL void Update(float _dt);
     DLL void Draw();
+    DLL void LateDraw();
 
 };

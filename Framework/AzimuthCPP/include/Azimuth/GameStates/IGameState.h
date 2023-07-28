@@ -18,6 +18,7 @@ public:
     virtual void Load() = 0;
     virtual void Update(float _dt) {}
     virtual void Draw() {}
+    virtual void LateDraw() {}
     virtual void Unload() {}
 
 protected:
