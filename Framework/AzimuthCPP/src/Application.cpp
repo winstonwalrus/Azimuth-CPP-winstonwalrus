@@ -11,7 +11,6 @@
 
 
 Application* Application::m_instance = nullptr;
-bool Application::m_paused = false;
 
 const char* Application::GetApplicationDirectory()
 {

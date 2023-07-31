@@ -33,7 +33,7 @@ public:
 private:
 	DLL static Application* m_instance;
 
-	DLL static bool m_paused;
+	bool m_paused;
 
 	Game* m_game;
 	const char* m_applicationDir;
