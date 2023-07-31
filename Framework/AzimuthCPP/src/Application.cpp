@@ -31,22 +31,22 @@ Window* Application::GetWindow()
 
 void Application::Pause()
 {
-	m_paused = true;
+	m_instance->m_paused = true;
 }
 
 void Application::Unpause()
 {
-	m_paused = false;
+	m_instance->m_paused = false;
 }
 
 void Application::SetPause(bool _b)
 {
-	m_paused = _b;
+	m_instance->m_paused = _b;
 }
 
 void Application::SwitchPause()
 {
-	m_paused = !m_paused;
+	m_instance->m_paused = !m_instance->m_paused;
 }
 
 void Application::Quit()
