@@ -9,6 +9,8 @@
 
 #include <Azimuth/Utils/LINQ.h>
 
+#include <Azimuth/Application.h>
+
 using std::vector;
 
 struct s

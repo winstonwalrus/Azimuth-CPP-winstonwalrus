@@ -22,10 +22,10 @@ public:
 	DLL static void GetWindowSize(int& _width, int& _height);
 	DLL static Window* GetWindow();
 
-	DLL static void Pause();
-	DLL static void Unpause();
-	DLL static void SetPause(bool _b);
-	DLL static void SwitchPause();
+	DLL static void Pause() { m_instance->m_paused = true; };
+	DLL static void Unpause() { m_instance->m_paused = false; };
+	DLL static void SetPause(bool _b) { m_instance->m_paused = _b; };
+	DLL static void SwitchPause() { m_instance->m_paused = !m_instance->m_paused; };
 
 	DLL static void Quit();
 

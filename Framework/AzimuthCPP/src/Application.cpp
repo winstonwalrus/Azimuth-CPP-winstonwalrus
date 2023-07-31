@@ -28,26 +28,6 @@ Window* Application::GetWindow()
 	return m_instance->m_window;
 }
 
-void Application::Pause()
-{
-	m_instance->m_paused = true;
-}
-
-void Application::Unpause()
-{
-	m_instance->m_paused = false;
-}
-
-void Application::SetPause(bool _b)
-{
-	m_instance->m_paused = _b;
-}
-
-void Application::SwitchPause()
-{
-	m_instance->m_paused = !m_instance->m_paused;
-}
-
 void Application::Quit()
 {
 	m_instance->m_shouldQuit = true;
@@ -129,7 +109,7 @@ void Application::Process()
 	{
 		float dt = GetFrameTime();
 
-		if (!m_paused)
+		if (!m_instance->m_paused)
 		{
 			m_game->Update(dt);
 
