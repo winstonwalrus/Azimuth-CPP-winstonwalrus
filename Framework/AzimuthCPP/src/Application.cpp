@@ -9,6 +9,7 @@
 #include "Azimuth/GameStates/GameStateManager.h"
 #include "Azimuth/GameObjects/GameObjectManager.h"
 
+
 Application* Application::m_instance = nullptr;
 bool Application::m_paused = false;
 
@@ -41,6 +42,11 @@ void Application::Unpause()
 void Application::SetPause(bool _b)
 {
 	m_paused = _b;
+}
+
+void Application::SwitchPause()
+{
+	m_paused = !m_paused;
 }
 
 void Application::Quit()

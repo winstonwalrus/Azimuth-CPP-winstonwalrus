@@ -25,6 +25,7 @@ public:
 	DLL static void Pause();
 	DLL static void Unpause();
 	DLL static void SetPause(bool _b);
+	DLL static void SwitchPause();
 
 	DLL static void Quit();
 
